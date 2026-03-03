@@ -5,6 +5,9 @@ const app = express();
 app.use(express.json());
 
 const PAYSTACK_SECRET = "YOUR_SECRET_KEY";
+app.get("/", (req, res) => {
+  res.send("Server running");
+});
 
 // Webhook Endpoint
 app.post("/paystack-webhook", (req, res) => {
@@ -34,3 +37,4 @@ app.post("/paystack-webhook", (req, res) => {
 });
 
 app.listen(3000, () => console.log("Server running"));
+
