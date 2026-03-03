@@ -1,0 +1,283 @@
+:root {
+  --red: #e53935;
+  --red-dark: #c62828;
+  --bg: #f6f7f9;
+  --card: #ffffff;
+  --text: #2c2c2c;
+  --border: #e0e0e0;
+}
+/* Dark theme */
+body.dark {
+  --bg: #121212;
+  --card: #1e1e1e;
+  --text: #f1f1f1;
+  --border: #333;
+}
+
+body.dark aside {
+  background: #1b1b1b;
+}
+
+body.dark nav div:hover {
+  background: #2a2a2a;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  min-height: 100vh;
+}
+.about-container {
+  max-width: 520px;
+  margin: auto;
+  text-align: center;
+  background: var(--card);
+  padding: 28px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+}
+
+.about-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 10px;
+}
+
+.about-title {
+  margin: 6px 0;
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.about-tagline {
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.about-description ul {
+  text-align: left;
+  padding-left: 18px;
+  margin-bottom: 16px;
+}
+
+.about-details {
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.about-btn {
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 6px;
+}
+
+.about-btn.secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.star {
+  cursor: pointer;
+  padding: 5px;
+}
+
+.star:hover {
+  transform: scale(1.2);
+}
+
+/* Sidebar */
+aside {
+  width: 240px;
+  background: #fff;
+  border-right: 1px solid var(--border);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--red);
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+nav div {
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+nav div:hover {
+  background: #f0f0f0;
+}
+
+nav svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--red-dark);
+}
+
+.crown {
+  width: 14px;
+  height: 14px;
+  margin-left: auto;
+  fill: gold;
+}
+
+/* Toggle */
+.toggle {
+  width: 36px;
+  height: 20px;
+  background: #ccc;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: left 0.2s;
+}
+
+.toggle.on { background: var(--red); }
+.toggle.on::after { left: 18px; }
+
+/* Main */
+main {
+  flex: 1;
+  padding: 24px;
+}
+
+.view { display: none; }
+.view.active { display: block; }
+
+.card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.upgrade {
+  margin-top: auto;
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  color: #fff;
+  padding: 14px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+}
+.adult-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+/* ===== TIME SAVED BARS ===== */
+
+.bar {
+  width: 30%;
+  height: 10px;
+  background: #e5e5e5;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.fill {
+  height: 100%;
+  width: 0%;
+  transition: width .6s ease;
+}
+
+/* Individual colors */
+#barToday {
+  background-color: #22c55e !important;
+}
+
+#barMonth {
+  background-color: #3b82f6 !important;
+}
+
+#barLife {
+  background-color: #a855f7 !important;
+}
+
+
+ 
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+
+  margin: 4px 10px 0 10px;  /* smaller top space */
+
+  border-radius: 8px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.profile-card:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.avatar {
+  width: 32px;   /* smaller */
+  height: 32px;  /* smaller */
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-name {
+  font-weight: 600;
+  font-size: 13px;   /* smaller text */
+  line-height: 1.2;
+}
+
+.profile-email {
+  font-size: 11px;   /* smaller email */
+  opacity: 0.6;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

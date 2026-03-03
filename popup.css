@@ -1,0 +1,251 @@
+ body {
+  margin: 0;
+  width: 360px;
+  height: 520px;
+  font-family: system-ui, sans-serif;
+  background: #f5f5f5;
+  position: relative;
+}
+
+/* Top bar */
+.header {
+  height: 48px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  border-bottom: 1px solid #e0e0e0;
+
+}
+
+.header-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+/* Main content area */
+.content {
+  position: absolute;
+  top: 48px;
+  bottom: 72px;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  text-align: center;
+  overflow-y: auto;
+}
+
+.view {
+  display: none;
+}
+
+.view.active {
+  display: block;
+}
+
+/* Face illustration */
+.face {
+  width: 90px;
+  height: 90px;
+  margin: 40px auto 16px;
+  background: #9aa3ad;
+  border-radius: 20px;
+  position: relative;
+}
+
+.face-eye {
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 36px;
+}
+
+.face-eye.left { left: 24px; }
+.face-eye.right { right: 24px; }
+
+.eyebrow {
+  width: 18px;
+  height: 4px;
+  background: #333;
+  position: absolute;
+  top: 26px;
+  border-radius: 2px;
+}
+
+.eyebrow.left { left: 20px; transform: rotate(-20deg); }
+.eyebrow.right { right: 20px; transform: rotate(20deg); }
+
+h3 {
+  margin: 0 0 16px;
+  font-size: 18px;
+}
+
+p {
+  color: #777;
+  font-size: 14px;
+}
+
+/* Keyword UI */
+.row {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background: #c0392b;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.gray-btn {
+  margin-top: 16px;
+  background: #6c6f7a;
+  width: 100%;
+}
+
+.remaining {
+  margin-top: 12px;
+  font-size: 13px;
+}
+
+.premium {
+  color: #c0392b;
+  font-size: 13px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Footer locked to bottom */
+.footer {
+  position: absolute;
+  bottom: -20px;  /* negative offset moves it further down */
+  left: 0;
+  right: 0;
+  height: 82px;
+  border-top: 1px solid #e0e0e0;
+  background: #fff;
+  padding:20px ;
+}
+
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.tab {
+  cursor: pointer;
+  color: #777;
+}
+
+.tab.active {
+  color: #000;
+}
+
+/* Toggle */
+.toggle {
+  margin: 12px auto 0;
+  width: 44px;
+  height: 22px;
+  background: #ccc;
+  border-radius: 11px;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle::after {
+  content: "";
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s;
+}
+
+.toggle.on {
+  background: #1abc9c;
+}
+
+.toggle.on::after {
+  transform: translateX(22px);
+}
+
+.streak-title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 20px;
+  letter-spacing: 1px;
+}
+
+.streak-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+.streak-container {
+  font-size: 80px;
+}
+
+.streak-container div {
+  font-size: 120px; /* BIG number */
+  line-height: 1;
+}
+
+.best-streak {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+
+#sites.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+}
+
+
+#blockBtn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.view {
+  display: none;
+}
+
+.view.active {
+  display: block;
+}

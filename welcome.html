@@ -1,0 +1,515 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Stop Blocker – Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<aside>
+  <div class="logo">Stop Blocker</div>
+
+  <div id="adultSidebarToggle" class="adult-toggle">
+    <span>Block Adult Content</span>
+    <div class="toggle" id="adultToggle"></div>
+  </div>
+
+  <nav>
+    <div data-route="Home">Home</div>
+    <div data-route="premium">Premium</div>
+    <div data-route="blocklist">Blocklist</div>
+<div data-route="languages">Languages</div>
+    <div data-route="security">Security</div>
+        <div data-route="about">About</div>
+
+  </nav>
+<!-- ✅ PROFILE CARD UNDER ABOUT -->
+<div class="profile-card" id="profileCard">
+  <img src="https://api.dicebear.com/7.x/pixel-art/svg" class="avatar">
+  <div class="profile-info">
+    <div class="profile-name">Guest</div>
+    <div class="profile-email">Sign up / Log in</div>
+  </div>
+</div>
+
+
+</aside>
+
+<main>
+<!-- HOME -->
+<div id="Home" class="view active">
+
+  <!-- Focus Score Card -->
+  <div class="card">
+    <h3 data-i18n="focusScore">Focus Score</h3>
+
+    <div style="
+      width:100%;
+      height:14px;
+      background:#eee;
+      border-radius:999px;
+      overflow:hidden;
+      margin-top:8px;
+    ">
+      <div id="focusBar" style="
+        width:70%;
+        height:100%;
+        background:#22c55e;
+        transition:width .3s;
+      "></div>
+    </div>
+
+    <p id="focusText" style="margin-top:10px;font-weight:600;"
+       data-i18n="scoreText">
+      Score: 70
+    </p>
+  </div>
+
+  <!-- Dark Mode Card -->
+  <div class="card" style="margin-top:20px;">
+    <div style="
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    ">
+      <span data-i18n="darkMode">Dark Mode</span>
+      <div class="toggle" id="themeToggle"></div>
+    </div>
+  </div>
+
+ <!-- Time Saved Card -->
+<div class="card" style="margin-top:20px;">
+  <h3 data-i18n="timeSaved">Time Saved</h3>
+
+  <div class="barRow">
+    <span data-i18n="today">Today</span>
+    <span id="todayNum">0</span>
+  </div>
+  <div class="bar"><div id="barToday" class="fill"></div></div>
+
+  <div class="barRow">
+    <span data-i18n="thisMonth">This Month</span>
+    <span id="monthNum">0</span>
+  </div>
+  <div class="bar"><div id="barMonth" class="fill"></div></div>
+
+  <div class="barRow">
+    <span data-i18n="lifetime">Lifetime</span>
+    <span id="lifeNum">0</span>
+  </div>
+  <div class="bar"><div id="barLife" class="fill"></div></div>
+</div>
+
+<!-- Incognito Mode Card -->
+<div class="card" style="margin-top:20px;">
+  <div style="
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  ">
+    <div>
+      <strong data-i18n="incognitoMode">Incognito Mode</strong>
+      <p style="opacity:.7;margin:4px 0 0;"
+         data-i18n="enableIncognito">
+        Enable extension in Incognito
+      </p>
+    </div>
+
+    <div class="toggle" id="incognitoToggle"></div>
+  </div>
+</div>
+
+<!-- Stealth Mode Card -->
+<div class="card" style="margin-top:20px;">
+  <div style="
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  ">
+    <div>
+      <strong data-i18n="stealthMode">Stealth Mode</strong>
+      <p style="opacity:.7;margin:4px 0 0;"
+         data-i18n="hideSigns">
+        Hide visual signs of the blocker
+      </p>
+    </div>
+
+    <div class="toggle" id="stealthToggle"></div>
+  </div>
+</div>
+
+
+
+</div> <!-- end Home -->
+
+<!-- PREMIUM -->
+<div id="premium" class="view">
+
+  <div class="card">
+
+    <h2 style="text-align:center;font-size:26px;margin-bottom:6px;"
+        data-i18n="unlockPremium">
+      Unlock Premium Protection
+    </h2>
+
+    <p style="text-align:center;opacity:.75;margin-bottom:30px;"
+       data-i18n="premiumSubtitle">
+      Go beyond the free limits for seamless, powerful filtering
+    </p>
+
+    <div style="
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:20px;
+    ">
+
+      <!-- FREE PLAN -->
+      <div style="
+        border:1px solid var(--border);
+        border-radius:14px;
+        padding:20px;
+      ">
+
+        <div style="font-weight:700;margin-bottom:10px;"
+             data-i18n="current">
+          Current
+        </div>
+
+        <h3 style="margin:0 0 10px 0;"
+            data-i18n="freePlan">
+          Free Plan
+        </h3>
+
+        <ul style="line-height:1.8;padding-left:18px;">
+          <li data-i18n="liteProtection">✔ Lite Protection</li>
+          <li data-i18n="safeSearch">✔ Safe Search (Optional)</li>
+          <li data-i18n="blockSlots">✔ Blocklist Slots</li>
+          <li data-i18n="customKeywords">✔ Custom Keywords</li>
+          <li data-i18n="futureUpdates">✔ All Future Updates</li>
+        </ul>
+
+        <ul style="
+          line-height:1.8;
+          padding-left:18px;
+          opacity:.4;
+          margin-top:10px;
+        ">
+          <li data-i18n="premiumLists">✖ Premium Block Lists (100K sites)</li>
+          <li data-i18n="stealthIcons">✖ Stealth Icon Modes</li>
+          <li data-i18n="prioritySupport">✖ Priority Support</li>
+          <li data-i18n="uninstallAlert">✖ Uninstall Alert</li>
+        </ul>
+
+        <div style="
+          margin-top:20px;
+          text-align:center;
+          font-weight:700;
+          opacity:.6;
+        " data-i18n="currentPlan">
+          Current Plan
+        </div>
+      </div>
+
+      <!-- MONTHLY PLAN -->
+      <div style="
+        border:2px solid var(--red);
+        border-radius:14px;
+        padding:20px;
+        position:relative;
+        background:#fff5f5;
+        color:#222;
+      ">
+
+        <div style="
+          position:absolute;
+          top:-12px;
+          left:50%;
+          transform:translateX(-50%);
+          background:var(--red);
+          color:#fff;
+          padding:4px 10px;
+          border-radius:999px;
+          font-size:12px;
+          font-weight:700;
+        " data-i18n="bestValue">
+          ⭐ Best Value
+        </div>
+
+        <h3 style="margin-top:10px;"
+            data-i18n="monthlyPlan">
+          Monthly Plan
+        </h3>
+
+        <div style="margin:10px 0 16px 0;">
+          <span style="text-decoration:line-through;opacity:.5;">$59.99</span>
+          <span style="font-size:28px;font-weight:800;margin-left:8px;">
+            $10/m
+          </span>
+        </div>
+
+        <ul style="line-height:1.8;padding-left:18px;">
+          <li data-i18n="maxProtection">✔ MAX Protection (+100,000 sites)</li>
+          <li data-i18n="safeEngines">✔ All Safe Search Engines</li>
+          <li data-i18n="stealthModes">✔ Stealth Icon Modes</li>
+          <li data-i18n="unlimitedBlock">✔ Unlimited Blocklist</li>
+          <li data-i18n="futureUpdates">✔ All Future Updates</li>
+          <li data-i18n="prioritySupportYes">✔ Priority Support</li>
+        </ul>
+
+        <button id="getMonthlyBtn" style="
+          margin-top:20px;
+          width:100%;
+          background:var(--red);
+          color:#fff;
+          border:none;
+          padding:14px;
+          border-radius:10px;
+          font-weight:700;
+          cursor:pointer;
+          font-size:15px;
+        " data-i18n="getMonthly">
+          Get monthly
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- BLOCKLIST -->
+<div id="blocklist" class="view">
+  <div class="card">
+
+    <h2 data-i18n="blockListTitle">Block List</h2>
+
+    <p style="opacity:.7;margin-bottom:20px;"
+       data-i18n="blockListSubtitle">
+      Manage websites that will be blocked
+    </p>
+
+    <!-- Add new site -->
+    <h3 data-i18n="addNewSite">Add New Site to Block</h3>
+
+    <div style="display:flex; gap:10px; margin:10px 0 25px;">
+      <input 
+        id="siteInput"
+        type="text"
+        placeholder="Enter domain to block (e.g., example.com)"
+        data-i18n-placeholder="blockPlaceholder"
+        style="flex:1; padding:10px; border-radius:8px; border:1px solid var(--border); background:var(--card); color:var(--text);"
+      />
+
+      <button id="addSiteBtn" class="about-btn"
+              data-i18n="addBtn">
+        Add
+      </button>
+    </div>
+
+    <!-- Current block list -->
+    <h3 data-i18n="currentBlockList">Current Block List</h3>
+
+    <table id="blockTable" style="width:100%; border-collapse:collapse; margin-top:10px;">
+      <thead>
+        <tr>
+          <th style="text-align:left; padding:8px;"
+              data-i18n="domain">
+            Domain
+          </th>
+          <th style="text-align:right; padding:8px;"
+              data-i18n="action">
+            Action
+          </th>
+        </tr>
+      </thead>
+
+      <tbody id="blockTableBody">
+        <tr id="emptyRow">
+          <td colspan="2" style="padding:12px; opacity:.6;"
+              data-i18n="noSites">
+            No sites added to block list
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+
+<!-- Languages -->
+<div id="languages" class="view">
+  <div class="card">
+<script src="translations.js"></script>
+<script src="dashboard.js"></script>
+
+    <h2>Languages</h2>
+    <p style="opacity:.7;margin-bottom:20px;">
+      Choose your preferred language
+    </p>
+
+    <select id="languageSelect" style="
+      width:100%;
+      padding:12px;
+      border-radius:8px;
+      border:1px solid var(--border);
+      background:var(--card);
+      color:var(--text);
+      font-size:15px;
+    ">
+
+      <option value="en">English</option>
+      <option value="es">Spanish</option>
+      <option value="pt">Portuguese</option>
+      <option value="hi">Hindi</option>
+      <option value="fr">French</option>
+      <option value="ar">Arabic</option>
+      <option value="id">Indonesian</option>
+      <option value="de">German</option>
+      <option value="zh">Mandarin</option>
+
+    </select>
+
+  </div>
+</div>
+
+
+<!-- SECURITY -->
+<div id="security" class="view">
+  <div class="card">
+
+    <h2 data-i18n="securityTitle">Security Settings</h2>
+
+    <p style="opacity:.7;margin-bottom:20px;"
+       data-i18n="securitySubtitle">
+      Manage password protection and security options.
+    </p>
+
+    <!-- Change password -->
+    <h3 data-i18n="changePassword">Change Password</h3>
+
+    <p style="opacity:.7;margin-bottom:10px;"
+       data-i18n="changePasswordDesc">
+      Update your settings access password.
+    </p>
+
+    <input
+      type="password"
+      id="newPassword"
+      placeholder="Enter new password"
+      data-i18n-placeholder="newPasswordPlaceholder"
+      style="width:100%; padding:10px; margin-bottom:10px; border-radius:8px; border:1px solid var(--border); background:var(--card); color:var(--text);"
+    />
+
+    <input
+      type="password"
+      id="confirmPassword"
+      placeholder="Confirm new password"
+      data-i18n-placeholder="confirmPasswordPlaceholder"
+      style="width:100%; padding:10px; margin-bottom:15px; border-radius:8px; border:1px solid var(--border); background:var(--card); color:var(--text);"
+    />
+
+    <button id="updatePasswordBtn"
+      data-i18n="updatePasswordBtn"
+      style="width:100%; padding:12px; background:#111; color:#fff; border:none; border-radius:8px; font-weight:600; cursor:pointer;">
+      Update Password
+    </button>
+
+    <hr style="margin:25px 0; border:0; border-top:1px solid var(--border);">
+
+    <!-- Require password toggle -->
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <div>
+        <strong data-i18n="requirePasswordTitle">
+          Require Password for Settings
+        </strong>
+
+        <p style="opacity:.7; margin:4px 0 0;"
+           data-i18n="requirePasswordDesc">
+          Always require password to access settings.
+        </p>
+      </div>
+
+      <div id="securityToggle" class="toggle on" style="background:#22c55e;"></div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- ABOUT -->
+<div id="about" class="view">
+  <div class="about-container">
+
+    <img src="icon48.png" class="about-icon" />
+
+    <h1 class="about-title">Stop Blocker</h1>
+
+    <p class="about-tagline">
+      Blocks porn websites and helps users stay focused.
+    </p>
+
+    <ul>
+      <li>Safer browsing experience</li>
+      <li>Blocks adult websites</li>
+      <li>Filtering & customization</li>
+    </ul>
+
+    <p><strong>Version:</strong> 1.0.0.2</p>
+    <p><strong>Developer:</strong> Kenny Papa Yaw Antwi</p>
+    <p><strong>Contact:</strong> kennyantwi16@gmail.com</p>
+
+    <div class="about-buttons">
+      <button id="rateBtn">⭐ Rate Extension</button>
+      <button>Contact Support</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- RATE PAGE -->
+<div id="rate" class="view">
+  <div class="card" style="text-align:center">
+
+    <h2>Rate Stop Blocker</h2>
+    <p>How would you rate this extension?</p>
+
+    <div id="stars" style="font-size:34px;">
+      <span class="star" data-value="1">☆</span>
+      <span class="star" data-value="2">☆</span>
+      <span class="star" data-value="3">☆</span>
+      <span class="star" data-value="4">☆</span>
+      <span class="star" data-value="5">☆</span>
+    </div>
+
+    <p id="ratingText">Click a star to rate</p>
+
+    <p>Thank you ❤️</p>
+
+  </div>
+</div>
+
+</main>
+
+<script src="dashboard.js" defer></script>
+
+
+
+
+
+  
+</body>
+</html>
+
+
+
+
+
